@@ -168,7 +168,7 @@ async function starts() {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nome* : ${me.name}\n*Numero* : @${me.jid.split('@')[0]}\n*Prefixo dos comandod* : ${prefix}\n*total de numeros bloqueados* : ${blocked.length}\n*O bot está ativo em* : ${kyun(uptime)}`
+					teks = `*Meu nome* : ${me.name}\n*Meu número* : @${me.jid.split('@')[0]}\n*Prefixo dos comandos* : ${prefix}\n*total de putas bloqueadas* : ${blocked.length}\n*Bot codado por mhankbarbar, tunado e traduzido por Thanatos`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
