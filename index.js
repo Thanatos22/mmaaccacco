@@ -70,7 +70,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `coe viado @${num.split('@')[0]}\nSelamat seja bem vindo a *${mdata.subject}*`
+				teks = `coe viado @${num.split('@')[0]} seja bem vindo a *${mdata.subject}*`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -300,7 +300,7 @@ async function starts() {
 							.toFormat('webp')
 							.save(ran)*/
 					} else {
-						reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
+						reply(`Ta achando que eu sou deus carai, adicione .sticker na legenda de um video ou imagem ou apenas marque a mensagem com o .sticker`)
 					}
 					break
 				case 'gtts':
@@ -446,7 +446,7 @@ async function starts() {
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `*#* @${mem.jid.split('@')[0]}\n`
+						teks += `*•* @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
@@ -496,7 +496,7 @@ async function starts() {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('marca o cara que eu removo')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = 'Pedido recebido, problema: \ n'
@@ -506,7 +506,7 @@ async function starts() {
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Perintah di terima, mengeluarkan : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`B A N I D O: @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
@@ -585,7 +585,7 @@ async function starts() {
 						pp = await client.getProfilePicture(id)
 						buffer = await getBuffer(pp)
 						client.updateProfilePicture(botNumber, buffer)
-						mentions(`Foto profile Berhasil di perbarui menggunakan foto profile @${id.split('@')[0]}`, [jid], true)
+						mentions(`Pronto clonei a foto de perfil desse viado ai @${id.split('@')[0]}`, [jid], true)
 					} catch (e) {
 						reply('falha')
 					}
