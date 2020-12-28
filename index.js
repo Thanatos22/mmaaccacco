@@ -168,7 +168,7 @@ async function starts() {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Meu nome* : ${me.name}\n*Meu número* : @${me.jid.split('@')[0]}\n*Prefixo dos comandos* : ${prefix}\n*total de putas bloqueadas* : ${blocked.length}\n*Bot codado por mhankbarbar, tunado e traduzido por Thanatos`
+					teks = `*Meu nome* : ${me.name}\n*Meu número* : @${me.jid.split('@')[0]}\n*Prefixo dos comandos* : ${prefix}\n*total de putas bloqueadas* : ${blocked.length}\n*Bot codado por mhankbarbar, tunado e traduzido por Thanatos*`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -195,7 +195,7 @@ async function starts() {
 								fs.unlinkSync(media)
 							})
 					} else {
-						reply('Só uma foto mano')
+						reply('so funciona com foto carai')
 					}
 					break
 				case 'stiker':
@@ -388,7 +388,7 @@ async function starts() {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('marca o cara que eu removo')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Ta de adm mas é burro pá caralho faz essa porra direito marca ai um cara pra eu remover')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = 'Pedido recebido, problema: \ n'
@@ -431,7 +431,7 @@ async function starts() {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Hmmm mamaco')
 					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('Udah aktif um')
+						if (isWelkom) return reply('Já ativo')
 						welkom.push(from)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
 						reply('recurso de boas vindas ativado')
@@ -469,7 +469,7 @@ async function starts() {
 							reply(err)
 						})
 					} else {
-						reply('Só uma foto mano')
+						reply('so funciona com foto carai')
 					}
 					break
 				default:
