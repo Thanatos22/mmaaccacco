@@ -297,9 +297,9 @@ async function starts() {
 					}
 					break
 				case 'gtts':
-					if (args.length < 1) return client.sendMessage(from, 'Kode bahasanya mana om?', text, {quoted: mek})
+					if (args.length < 1) return client.sendMessage(from, 'Precisa colocar o codigo do idioma macaco', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, 'Textnya mana om', text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, 'Cadê o texto macaco', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
@@ -318,12 +318,12 @@ async function starts() {
 				case 'meme':
 					meme = await kagApi.memes()
 					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '🤖'})
 					break
 				case 'memeindo':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '🤖'})
 					break
 				case 'setprefix':
 					if (args.length < 1) return
@@ -445,7 +445,7 @@ async function starts() {
 				case 'clone':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('A tag alvo que você deseja clonar')
+					if (args.length < 1) return reply('Marca o cara que é pra eu roubar a foto')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
